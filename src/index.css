@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0f172a;
+  --color-paper: #f7f8fa;
+  --color-signal: #0f766e;
+  --color-deep: #0b1220;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--color-signal); outline-offset: 3px; }
+@keyframes flow { to { stroke-dashoffset: -24; } }
+.flow { stroke-dasharray: 4 8; animation: flow 1.6s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .flow { animation: none; } html { scroll-behavior: auto; } }
