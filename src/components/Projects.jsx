@@ -18,19 +18,19 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <span className="inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
+            <span className="reveal-text inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
               Our Portfolio
             </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
+            <h2 className="reveal-text delay-100 mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
               The amazing project that has been completed
             </h2>
-            <p className="mt-3 max-w-xl text-base text-slate-600">
+            <p className="reveal-text delay-200 mt-3 max-w-xl text-base text-slate-600">
               Explore recent digital platforms, security architectures, and mission-critical cloud deployments engineered by our teams.
             </p>
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="reveal-text delay-200 flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}

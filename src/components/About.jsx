@@ -8,18 +8,18 @@ export default function About() {
         <div className="grid items-center gap-16 lg:grid-cols-12">
           {/* Left Column: Text & Advantages */}
           <div className="lg:col-span-6">
-            <span className="inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
+            <span className="reveal-text inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
               About Company
             </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem] lg:leading-[1.18]">
+            <h2 className="reveal-text delay-100 mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem] lg:leading-[1.18]">
               We have over 25+ years in the Tech Industry
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-slate-600">
+            <p className="reveal-text delay-200 mt-5 text-base leading-relaxed text-slate-600">
               Knowva Systems partners with enterprises and emerging startups to design, architect, and deploy reliable digital solutions. We turn complex IT bottlenecks into agile competitive advantages with battle-tested engineering standards.
             </p>
 
             {/* Checklist */}
-            <ul className="mt-8 space-y-3.5">
+            <ul className="reveal-text delay-300 mt-8 space-y-3.5">
               {aboutChecklist.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 mt-0.5">
@@ -31,7 +31,7 @@ export default function About() {
             </ul>
 
             {/* CTA & Founder Quote */}
-            <div className="mt-10 flex flex-wrap items-center gap-6 pt-6 border-t border-slate-100">
+            <div className="reveal-text delay-400 mt-10 flex flex-wrap items-center gap-6 pt-6 border-t border-slate-100">
               <a
                 href="#consultation"
                 className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-indigo-600/25 transition-all duration-200 hover:bg-indigo-700 hover:shadow-lg active:scale-95"
@@ -57,7 +57,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Dual Overlapping Photo Composition */}
-          <div className="relative lg:col-span-6 flex justify-center">
+          <div className="reveal-text delay-200 relative lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-md sm:max-w-lg">
               {/* Primary Larger Photo */}
               <div className="relative h-80 sm:h-96 w-4/5 overflow-hidden rounded-2xl shadow-2xl border-4 border-white">

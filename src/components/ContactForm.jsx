@@ -29,7 +29,7 @@ export default function ContactForm() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-12">
           {/* Left Column: Clean Floating White Consultation Form Card */}
-          <div className="lg:col-span-6">
+          <div className="reveal-text lg:col-span-6">
             <div className="rounded-3xl bg-white p-8 sm:p-10 text-slate-800 shadow-2xl border border-slate-100">
               <span className="inline-block rounded-full bg-indigo-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-indigo-600">
                 Book A Session
@@ -142,16 +142,16 @@ export default function ContactForm() {
           </div>
 
           {/* Right Column: Radial Metric Progress Rings & Value Highlights */}
-          <div className="lg:col-span-6">
+          <div className="reveal-text delay-100 lg:col-span-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-200 backdrop-blur-md">
               <Sparkles className="size-3.5 text-teal-300" />
               <span>Proven Track Record</span>
             </div>
 
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-tight">
+            <h2 className="reveal-text delay-100 mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-tight">
               We have helped more than 700+ clients worldwide
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-indigo-100/90 font-normal">
+            <p className="reveal-text delay-200 mt-4 text-base leading-relaxed text-indigo-100/90 font-normal">
               From global enterprise infrastructure to breakthrough seed-stage platforms, our dedicated engineering squads bring deep technical precision to every engagement.
             </p>
 

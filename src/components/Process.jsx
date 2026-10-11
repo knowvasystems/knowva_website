@@ -38,13 +38,13 @@ export default function Process() {
         <div className="grid gap-16 lg:grid-cols-12 lg:items-start">
           {/* Left Column: Heading and Accordion FAQ */}
           <div className="lg:col-span-7">
-            <span className="inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
+            <span className="reveal-text inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
               How We Work
             </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem] lg:leading-[1.18]">
+            <h2 className="reveal-text delay-100 mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem] lg:leading-[1.18]">
               We provide best IT solutions for help your problem
             </h2>
-            <p className="mt-4 text-base text-slate-600">
+            <p className="reveal-text delay-200 mt-4 text-base text-slate-600">
               Clear accountability from discovery to deployment. Here is how our engineering engagement ensures precision, predictability, and performance.
             </p>
 
@@ -93,7 +93,7 @@ export default function Process() {
           </div>
 
           {/* Right Column: 4 Process Step Cards */}
-          <div className="lg:col-span-5">
+          <div className="reveal-text delay-200 lg:col-span-5">
             <div className="rounded-3xl bg-slate-900 p-8 sm:p-10 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 -mr-16 -mt-16 size-48 rounded-full bg-indigo-500/20 blur-2xl" />
 

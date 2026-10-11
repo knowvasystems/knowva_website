@@ -17,19 +17,19 @@ export default function Solutions() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
+          <span className="reveal-text inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
             Our Services
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
+          <h2 className="reveal-text delay-100 mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
             Different Disciplines, One Accountable Team
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="reveal-text delay-200 mt-4 text-base text-slate-600">
             Delivering tailored technology strategies that resolve technical debt, strengthen security postures, and accelerate your business roadmap.
           </p>
         </div>
 
         {/* 4 Service Cards Grid - Active purple style shifts on hover */}
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="reveal-text delay-200 mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((item) => {
             const Icon = iconMap[item.icon] || Server;
             const isActive = activeId === item.id;
@@ -90,7 +90,7 @@ export default function Solutions() {
         </div>
 
         {/* Big Counter Stats Strip (from Figma design) */}
-        <div className="mt-20 rounded-2xl bg-white p-8 sm:p-12 shadow-xl shadow-slate-200/50 border border-slate-100">
+        <div className="reveal-text delay-200 mt-20 rounded-2xl bg-white p-8 sm:p-12 shadow-xl shadow-slate-200/50 border border-slate-100">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:divide-x lg:divide-slate-200">
             {statsMetrics.map((stat, i) => (
               <div key={stat.label} className={`text-center ${i > 0 ? "lg:pl-8" : ""}`}>

@@ -7,13 +7,13 @@ export default function Team() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
+          <span className="reveal-text inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
             Expert Team
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
+          <h2 className="reveal-text delay-100 mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
             Our certified experts
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="reveal-text delay-200 mt-4 text-base text-slate-600">
             Meet the senior systems architects and security engineers who lead your technical strategy and implementation.
           </p>
         </div>

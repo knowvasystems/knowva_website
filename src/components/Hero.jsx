@@ -36,23 +36,23 @@ export default function Hero() {
           {/* Left Column: Headline and CTAs */}
           <div className="lg:col-span-7">
             {/* Tag / Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold tracking-wide uppercase text-indigo-100 backdrop-blur-md">
+            <div className="animate-hero-tag inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold tracking-wide uppercase text-indigo-100 backdrop-blur-md">
               <Sparkles className="size-3.5 text-yellow-300" />
               <span>Best Quality IT Solutions</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="mt-6 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-[3.5rem] lg:leading-[1.12]">
+            <h1 className="animate-hero-heading mt-6 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-[3.5rem] lg:leading-[1.12]">
               We provide best IT solutions for help your problem about technology
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-indigo-100/90 font-normal">
+            <p className="animate-hero-subtext mt-6 max-w-xl text-lg leading-relaxed text-indigo-100/90 font-normal">
               Empowering organizations with high-velocity cloud architecture, dedicated cyber defense, and tailored enterprise software built for modern scale.
             </p>
 
             {/* Search/Email CTA Bar */}
-            <div className="mt-8 max-w-lg">
+            <div className="animate-hero-cta mt-8 max-w-lg">
               <form onSubmit={handleSubscribe} className="relative flex flex-col sm:flex-row items-center gap-2 rounded-full bg-white p-1.5 shadow-2xl shadow-indigo-950/40">
                 <input
                   type="email"
@@ -78,7 +78,7 @@ export default function Hero() {
             </div>
 
             {/* Trust bullet features */}
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-xs font-medium text-indigo-100">
+            <div className="animate-hero-badges mt-8 flex flex-wrap items-center gap-6 text-xs font-medium text-indigo-100">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-teal-300 shrink-0" />
                 <span>Zero Downtime Architecture</span>
@@ -95,7 +95,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Hero Collage & Interactive Floating Badges */}
-          <div className="relative flex justify-center lg:col-span-5">
+          <div className="animate-hero-visual relative flex justify-center lg:col-span-5">
             {/* Circular Composition Ring Frame */}
             <div className="relative size-80 sm:size-96 rounded-full border-4 border-white/20 p-3 shadow-2xl">
               <div className="relative size-full overflow-hidden rounded-full border-4 border-white/40 shadow-inner">
