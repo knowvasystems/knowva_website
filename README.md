@@ -1,4 +1,4 @@
-# Knowva Systems landing page (React + Vite)
+# Knowva Systems  landing page (React + Vite)
 ```bash
 npm install
 npm run dev     # http://localhost:5173

@@ -1,37 +1,107 @@
 import { useState } from "react";
-import { Cloud, BarChart3, ShieldCheck, Check, ChevronDown } from "lucide-react";
-import { solutions } from "../lib/content";
+import { Server, Code2, ShieldAlert, CloudRain, Check, ArrowRight } from "lucide-react";
+import { services, statsMetrics } from "../lib/content";
 
-const icons = { Cloud, BarChart3, ShieldCheck };
+const iconMap = {
+  Server,
+  Code2,
+  ShieldAlert,
+  CloudRain,
+};
 
 export default function Solutions() {
-  const [open, setOpen] = useState(null);
+  const [activeId, setActiveId] = useState("soft-dev");
+
   return (
-    <section id="solutions" className="border-y border-slate-200 bg-white py-20">
-      <div className="mx-auto max-w-6xl px-5">
-        <h2 className="font-display max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">Three disciplines, one accountable team</h2>
-        <p className="mt-4 max-w-xl text-slate-600">Choose one or combine them. Each ends with software you own and a team that stays on it.</p>
-        <div className="mt-12 grid items-start gap-6 md:grid-cols-3">
-          {solutions.map((s) => {
-            const Icon = icons[s.icon];
-            const isOpen = open === s.id;
+    <section id="services" className="bg-slate-50/60 py-24 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Section Heading */}
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="inline-block rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600">
+            Our Services
+          </span>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
+            Different Disciplines, One Accountable Team
+          </h2>
+          <p className="mt-4 text-base text-slate-600">
+            Delivering tailored technology strategies that resolve technical debt, strengthen security postures, and accelerate your business roadmap.
+          </p>
+        </div>
+
+        {/* 4 Service Cards Grid - Active purple style shifts on hover */}
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((item) => {
+            const Icon = iconMap[item.icon] || Server;
+            const isActive = activeId === item.id;
+
             return (
-              <article key={s.id} className={`rounded-xl border p-6 transition-colors ${isOpen ? "border-signal bg-teal-50/40" : "border-slate-200 bg-paper hover:border-slate-300"}`}>
-                <Icon className="size-6 text-signal" aria-hidden />
-                <h3 className="font-display mt-4 text-xl font-semibold leading-snug">{s.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{s.summary}</p>
-                <ul className="mt-5 space-y-2.5 text-sm">
-                  {s.features.map((f) => (<li key={f} className="flex gap-2"><Check className="mt-0.5 size-4 shrink-0 text-signal" aria-hidden />{f}</li>))}
-                </ul>
-                <button onClick={() => setOpen(isOpen ? null : s.id)} aria-expanded={isOpen} aria-controls={`b-${s.id}`}
-                  className="mt-6 flex w-full items-center justify-between border-t border-slate-200 pt-4 text-sm font-medium">
-                  How this helps your architecture
-                  <ChevronDown className={`size-4 transition-transform ${isOpen ? "rotate-180" : ""}`} aria-hidden />
-                </button>
-                <p id={`b-${s.id}`} hidden={!isOpen} className="mt-3 text-sm leading-relaxed text-slate-600">{s.benefit}</p>
-              </article>
+              <div
+                key={item.id}
+                onMouseEnter={() => setActiveId(item.id)}
+                className={`group relative flex flex-col justify-between rounded-2xl p-7 transition-all duration-300 cursor-pointer ${isActive
+                    ? "bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 -translate-y-2 scale-[1.02]"
+                    : "bg-white text-slate-800 shadow-md shadow-slate-200/60 hover:shadow-lg border border-slate-100 hover:-translate-y-1"
+                  }`}
+              >
+                <div>
+                  {/* Icon Container */}
+                  <div
+                    className={`flex size-14 items-center justify-center rounded-xl transition-all duration-300 ${isActive ? "bg-white/20 text-white scale-105" : "bg-indigo-50 text-indigo-600"
+                      }`}
+                  >
+                    <Icon className="size-7" aria-hidden="true" />
+                  </div>
+
+                  {/* Title & Description */}
+                  <h3 className={`mt-6 text-xl font-bold transition-colors duration-200 ${isActive ? "text-white" : "text-slate-900"}`}>
+                    {item.title}
+                  </h3>
+                  <p className={`mt-3 text-sm leading-relaxed transition-colors duration-200 ${isActive ? "text-indigo-100" : "text-slate-600"}`}>
+                    {item.description}
+                  </p>
+
+                  {/* Features Checklist */}
+                  <ul className="mt-6 space-y-2.5 text-xs font-medium">
+                    {item.features.map((feat) => (
+                      <li key={feat} className="flex items-center gap-2">
+                        <Check className={`size-4 shrink-0 transition-colors duration-200 ${isActive ? "text-teal-300" : "text-indigo-600"}`} />
+                        <span className={`transition-colors duration-200 ${isActive ? "text-indigo-100" : "text-slate-700"}`}>
+                          {feat}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Bottom Action Link */}
+                <div className={`mt-8 pt-4 border-t transition-colors duration-200 ${isActive ? "border-white/20" : "border-slate-100"}`}>
+                  <a
+                    href="#consultation"
+                    className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 group-hover:gap-3 ${isActive ? "text-white hover:text-indigo-200" : "text-indigo-600 hover:text-indigo-800"
+                      }`}
+                  >
+                    <span>Read More</span>
+                    <ArrowRight className="size-4" />
+                  </a>
+                </div>
+              </div>
             );
           })}
+        </div>
+
+        {/* Big Counter Stats Strip (from Figma design) */}
+        <div className="mt-20 rounded-2xl bg-white p-8 sm:p-12 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:divide-x lg:divide-slate-200">
+            {statsMetrics.map((stat, i) => (
+              <div key={stat.label} className={`text-center ${i > 0 ? "lg:pl-8" : ""}`}>
+                <p className="font-sans text-4xl font-extrabold tracking-tight text-indigo-600 sm:text-5xl">
+                  {stat.number}
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-700">{stat.label}</p>
+                <p className="mt-0.5 text-xs text-slate-400">Industry benchmark validated</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

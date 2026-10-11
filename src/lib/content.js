@@ -1,42 +1,149 @@
 export const navLinks = [
-  { label: "Solutions", href: "#solutions" },
-  { label: "Capabilities", href: "#standards" },
-  { label: "Engineering Process", href: "#process" },
-  { label: "Case Studies", href: "#contact" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Our Experts", href: "#team" },
+  { label: "Contact", href: "#consultation" },
 ];
 
-export const solutions = [
+export const heroStats = [
+  { value: "25+", label: "Years Experience" },
+  { value: "99%", label: "Satisfaction Rate" },
+  { value: "4.9/5", label: "Client Rating" },
+];
+
+export const clientLogos = [
+  "Google Cloud",
+  "Microsoft Azure",
+  "Amazon AWS",
+  "Slack",
+  "Spotify",
+  "Dropbox",
+];
+
+export const services = [
   {
-    id: "cloud", icon: "Cloud", title: "Cloud & Infrastructure Solutions",
-    summary: "Move to the cloud and stay up when a region doesn't.",
-    features: ["Cloud migration with staged cutovers", "Microservices and container orchestration", "Multi-region reliability and failover", "Infrastructure as code for every environment"],
-    benefit: "Every environment is reproducible from code, so recovery is a deploy rather than a rebuild, and each service scales on its own.",
+    id: "it-mgmt",
+    icon: "Server",
+    title: "IT Management",
+    description: "End-to-end monitoring, infrastructure management, and hardware lifecycle maintenance for zero downtime.",
+    features: ["Infrastructure Monitoring", "Network Optimization", "Server Maintenance"],
+    featured: false,
   },
   {
-    id: "data", icon: "BarChart3", title: "Data Analytics & Business Intelligence (BI)",
-    summary: "Turn operational data into numbers people act on.",
-    features: ["ETL/ELT data pipelines", "Real-time analytics dashboards", "BI tool integrations", "Predictive modeling on live telemetry"],
-    benefit: "One governed pipeline feeds every dashboard, so teams stop reconciling spreadsheets and see current numbers.",
+    id: "soft-dev",
+    icon: "Code2",
+    title: "Software Development",
+    description: "Custom enterprise software engineering, web applications, and scalable microservices built to scale.",
+    features: ["Custom Web Apps", "API & Microservices", "Mobile Engineering"],
+    featured: true, // Featured card in Figma with purple background
   },
   {
-    id: "secure", icon: "ShieldCheck", title: "Software Maintenance, QA & Cybersecurity",
-    summary: "Keep critical software patched, tested and defended.",
-    features: ["Zero-trust security reviews and code audits", "Automated test suites and CI/CD gates", "Zero-downtime upgrades", "24/7 maintenance under written SLAs"],
-    benefit: "Releases pass automated gates before they ship, and security findings are fixed in the same pipeline that delivers features.",
+    id: "cyber-sec",
+    icon: "ShieldAlert",
+    title: "Cyber Security",
+    description: "Zero-trust security defense, automated vulnerability scanners, penetration testing, and compliance.",
+    features: ["Threat Detection", "Penetration Testing", "SOC 2 & ISO Compliance"],
+    featured: false,
+  },
+  {
+    id: "cloud-sol",
+    icon: "CloudRain",
+    title: "Cloud Solutions",
+    description: "Seamless multi-cloud migration, Kubernetes containerization, automated CI/CD pipelines, and FinOps.",
+    features: ["Multi-cloud Migration", "DevOps & CI/CD", "High Availability Setup"],
+    featured: false,
   },
 ];
 
-export const steps = [
-  { title: "Architectural discovery and requirements", body: "We write the business requirements document and produce high-level and low-level system designs you can review before any code exists." },
-  { title: "Agile sprint execution and continuous integration", body: "Two-week sprints end in working software. Every merge builds, tests and deploys to a staging environment." },
-  { title: "Security audits and production hardening", body: "We run a zero-trust review, dependency and code audits, load tests and a failover drill before launch." },
-  { title: "Managed operations, SLAs and long-term support", body: "We monitor, patch and improve the platform under a written SLA, with an on-call engineer who knows your system." },
+export const statsMetrics = [
+  { number: "15K+", label: "Successful Projects" },
+  { number: "150+", label: "Certified IT Experts" },
+  { number: "2.5M+", label: "Global Users Served" },
+  { number: "99.9%", label: "System Availability" },
 ];
 
-export const standards = [
-  { icon: "Lock", title: "SOC 2 and zero-trust principles", body: "Least-privilege access, audited change history and no implicit trust between services." },
-  { icon: "GitMerge", title: "CI/CD automated test gates", body: "Unit, integration and security tests must pass before code reaches production." },
-  { icon: "Boxes", title: "Decoupled microservices", body: "Services own their data and deploy independently, so one failure stays contained." },
-  { icon: "Layers", title: "Infrastructure as code", body: "Terraform and Kubernetes manifests keep environments identical and reviewable." },
+export const aboutChecklist = [
+  "Certified enterprise architects and senior engineers",
+  "Guaranteed 15-minute response SLA for critical incidents",
+  "Zero-trust security protocol applied across all workflows",
+  "Transparent sprint tracking with full IP and code ownership",
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Global FinTech Banking Cloud Platform",
+    category: "Cloud Solutions",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    description: "High-throughput real-time payment settlement pipeline serving 40k transactions/sec.",
+  },
+  {
+    id: 2,
+    title: "Autonomous Logistics Fleet Telemetry",
+    category: "Software Development",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    description: "Distributed edge IoT ingest engine with sub-10ms latency geo-tracking.",
+  },
+  {
+    id: 3,
+    title: "Healthcare Zero-Trust Data Shield",
+    category: "Cyber Security",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    description: "HIPAA-compliant encrypted clinical records hub with biometric authentication.",
+  },
+  {
+    id: 4,
+    title: "Multi-Region Enterprise ERP Suite",
+    category: "IT Management",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    description: "Containerized ERP deployment with automated disaster recovery across 3 regions.",
+  },
+];
+
+export const faqProcess = [
+  {
+    question: "How do you evaluate our current IT architecture?",
+    answer: "We perform a comprehensive 360° architectural audit examining code quality, infrastructure cost, security vulnerabilities, and network bottlenecks before presenting actionable recommendations.",
+  },
+  {
+    question: "What is your typical project delivery methodology?",
+    answer: "We operate in disciplined 2-week agile sprints with continuous staging deployments, automated CI/CD validation gates, and weekly stakeholder demo check-ins.",
+  },
+  {
+    question: "Do we retain complete intellectual property ownership?",
+    answer: "Yes. All repositories, deployment pipelines, architecture documentation, and code artifacts are 100% owned by your company upon project sign-off.",
+  },
+  {
+    question: "What level of support do you provide post-launch?",
+    answer: "We provide 24/7 dedicated tier-3 on-call engineering support with contracted SLAs, uptime guarantees, and automated proactive system monitoring.",
+  },
+];
+
+export const teamMembers = [
+  {
+    name: "Alexander Wright",
+    role: "Chief Technology Officer",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    expertise: "Cloud Architecture & Distributed Systems",
+  },
+  {
+    name: "Marcus Vance",
+    role: "Head of Cyber Defense",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+    expertise: "Zero-Trust Security & DevSecOps",
+  },
+  {
+    name: "Sarah Chen",
+    role: "Lead Software Architect",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+    expertise: "Microservices & Kubernetes Scaling",
+  },
+];
+
+export const metricSkills = [
+  { skill: "Cloud Architecture & Reliability", percentage: 95 },
+  { skill: "Cyber Security & Threat Defense", percentage: 92 },
+  { skill: "Custom Software Engineering", percentage: 89 },
 ];

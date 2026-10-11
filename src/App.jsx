@@ -1,24 +1,35 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Solutions from "./components/Solutions";
+import About from "./components/About";
+import Projects from "./components/Projects";
 import Process from "./components/Process";
-import Standards from "./components/Standards";
+import Team from "./components/Team";
 import ContactForm from "./components/ContactForm";
+import DiscountBanner from "./components/DiscountBanner";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-white focus:px-3 focus:py-2">Skip to content</a>
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-indigo-600 selection:text-white">
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-indigo-600 focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to content
+      </a>
       <Nav />
       <main id="main">
         <Hero />
         <Solutions />
+        <About />
+        <Projects />
         <Process />
-        <Standards />
+        <Team />
         <ContactForm />
+        <DiscountBanner />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

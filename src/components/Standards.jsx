@@ -15,9 +15,14 @@ export default function Standards() {
           {standards.map((s) => {
             const Icon = icons[s.icon];
             return (
-              <li key={s.title} className="border-t border-slate-800 pt-5">
-                <Icon className="size-5 text-teal-300" aria-hidden />
-                <h3 className="font-display mt-3 text-lg font-semibold">{s.title}</h3>
+              <li
+                key={s.title}
+                className="group border-t border-slate-800 pt-5 transition-colors duration-200 hover:border-teal-500/40"
+              >
+                <div className="flex size-9 items-center justify-center rounded-md bg-slate-800/80 text-teal-300 transition-transform duration-200 group-hover:scale-105 group-hover:bg-slate-800">
+                  <Icon className="size-5 text-teal-300" aria-hidden="true" />
+                </div>
+                <h3 className="font-display mt-3 text-lg font-semibold text-white transition-colors duration-200 group-hover:text-teal-200">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.body}</p>
               </li>
             );
@@ -27,3 +32,4 @@ export default function Standards() {
     </section>
   );
 }
+
