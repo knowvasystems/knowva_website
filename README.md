@@ -43,7 +43,7 @@ A modern, high-performance landing page for **Knowva Systems** built with **Reac
 # Install dependencies
 npm.cmd install
 
-# Start local development server (runs at http://localhost:5173)
+# Start local development server (runs at http://localhost:5172)
 npm.cmd run dev
 
 # Compile production bundle
