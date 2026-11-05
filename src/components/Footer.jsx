@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-4">
             <div className="text-white">
-              <CappsLogo />
+              <CappsLogo textClassName="text-white" />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-sm">
               Knowva Systems delivers mission-critical cloud platforms, cybersecurity architectures, and bespoke software engineering for enterprises worldwide.

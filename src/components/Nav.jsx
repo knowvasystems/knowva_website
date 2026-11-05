@@ -1,111 +1,19 @@
 import { useState } from "react";
 import { Phone, Menu, X, ArrowRight } from "lucide-react";
 import { navLinks } from "../lib/content";
+import logoImg from "../assets/logo.png";
 
-export function CappsLogo({ className = "size-9" }) {
+export function CappsLogo({ className = "size-9", textClassName = "text-slate-900" }) {
   return (
     <div className="flex items-center gap-2.5">
-      <div className={`relative flex items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-600/30 ${className}`}>
-        {/* Animated Knowledge Burst Nova Icon */}
-        <svg viewBox="0 0 36 36" fill="none" className="size-6 text-white overflow-visible" aria-hidden="true">
-          <defs>
-            {/* Soft Nova Glow Filter */}
-            <filter id="nova-glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="1.2" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-          </defs>
-
-          {/* Highly Visible Expanding Knowledge Wave 1 */}
-          <circle cx="18" cy="18" r="3" stroke="#ffffff" fill="none">
-            <animate attributeName="r" values="3;17.5" dur="2.4s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0.75;0" keyTimes="0;0.65;1" dur="2.4s" repeatCount="indefinite" />
-            <animate attributeName="stroke-width" values="2.4;1.6;0.6" keyTimes="0;0.65;1" dur="2.4s" repeatCount="indefinite" />
-          </circle>
-
-          {/* Highly Visible Expanding Knowledge Wave 2 */}
-          <circle cx="18" cy="18" r="3" stroke="#e0e7ff" fill="none">
-            <animate attributeName="r" values="3;17.5" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0.75;0" keyTimes="0;0.65;1" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
-            <animate attributeName="stroke-width" values="2.4;1.6;0.6" keyTimes="0;0.65;1" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
-          </circle>
-
-          {/* Highly Visible Expanding Knowledge Wave 3 */}
-          <circle cx="18" cy="18" r="3" stroke="#c7d2fe" fill="none">
-            <animate attributeName="r" values="3;17.5" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0.75;0" keyTimes="0;0.65;1" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
-            <animate attributeName="stroke-width" values="2.4;1.6;0.6" keyTimes="0;0.65;1" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
-          </circle>
-
-          {/* Radiant Diagonal Quanta Sparks (Knowledge Burst Embers) */}
-          <circle cx="18" cy="18" r="1.4" fill="#ffffff">
-            <animate attributeName="cx" values="18;27" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="cy" values="18;9" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="r" values="1.4;0.4" dur="2s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="18" cy="18" r="1.4" fill="#ffffff">
-            <animate attributeName="cx" values="18;27" dur="2s" begin="0.5s" repeatCount="indefinite" />
-            <animate attributeName="cy" values="18;27" dur="2s" begin="0.5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0" dur="2s" begin="0.5s" repeatCount="indefinite" />
-            <animate attributeName="r" values="1.4;0.4" dur="2s" begin="0.5s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="18" cy="18" r="1.4" fill="#ffffff">
-            <animate attributeName="cx" values="18;9" dur="2s" begin="1s" repeatCount="indefinite" />
-            <animate attributeName="cy" values="18;27" dur="2s" begin="1s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0" dur="2s" begin="1s" repeatCount="indefinite" />
-            <animate attributeName="r" values="1.4;0.4" dur="2s" begin="1s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="18" cy="18" r="1.4" fill="#ffffff">
-            <animate attributeName="cx" values="18;9" dur="2s" begin="1.5s" repeatCount="indefinite" />
-            <animate attributeName="cy" values="18;9" dur="2s" begin="1.5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0" dur="2s" begin="1.5s" repeatCount="indefinite" />
-            <animate attributeName="r" values="1.4;0.4" dur="2s" begin="1.5s" repeatCount="indefinite" />
-          </circle>
-
-          {/* Secondary 4-Point Star Flare (45° rotated) */}
-          <path
-            d="M 18,9 Q 18,18 27,18 Q 18,18 18,27 Q 18,18 9,18 Q 18,18 18,9 Z"
-            fill="#ffffff"
-            opacity="0.25"
-            transform="rotate(45 18 18)"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              values="45 18 18; 405 18 18"
-              dur="10s"
-              repeatCount="indefinite"
-            />
-          </path>
-
-          {/* Primary 4-Point Nova Starburst (Astroid Flare) */}
-          <path
-            d="M 18,6 Q 18,18 30,18 Q 18,18 18,30 Q 18,18 6,18 Q 18,18 18,6 Z"
-            fill="#ffffff"
-            opacity="0.85"
-            filter="url(#nova-glow)"
-          >
-            <animate
-              attributeName="opacity"
-              values="0.75;1;0.75"
-              dur="1.8s"
-              repeatCount="indefinite"
-            />
-          </path>
-
-          {/* Core Pulsing Halo */}
-          <circle cx="18" cy="18" r="4.5" fill="#ffffff" opacity="0.35">
-            <animate attributeName="r" values="3.8;5.6;3.8" dur="1.8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.45;0.15;0.45" dur="1.8s" repeatCount="indefinite" />
-          </circle>
-
-          {/* Brilliant Central Nova Core */}
-          <circle cx="18" cy="18" r="2.4" fill="#ffffff" />
-        </svg>
-      </div>
-      <span className="font-sans text-2xl font-extrabold tracking-tight text-slate-900">
-        <span className="text-indigo-600">Knowva Systems</span>
+      <img
+        src={logoImg}
+        alt="Knowva Systems Logo"
+        className={`object-contain rounded-xl shadow-md shadow-indigo-600/30 ${className}`}
+      />
+      <span className="font-sans text-2xl font-extrabold tracking-tight">
+        <span className="text-indigo-600">Knowva</span>{" "}
+        <span className={textClassName}>Systems</span>
       </span>
     </div>
   );
