@@ -1,4 +1,4 @@
-name: Deploy School Website to GitHub Pages
+name: Deploy Knowva Corporate Website to GitHub Pages
 
 on:
   push:
@@ -19,22 +19,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  validate:
-    name: Lint, Audit & Validate
+  build_and_validate:
+    name: Build, Audit & Validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Audit Repository for Accidentally Committed Secrets
+      - name: Audit Repository for Exposed Secrets
         run: |
           echo "Scanning repository for exposed keys or credentials..."
-          SECRET_MATCHES=$(grep -rnE --exclude-dir=".git" --exclude-dir=".github" "(AIza[0-9A-Za-z_-]{35}|ghp_[0-9a-zA-Z]{36}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----)" . || true)
+          SECRET_MATCHES=$(grep -rnE --exclude-dir=".git" --exclude-dir=".github" --exclude-dir="node_modules" --exclude-dir="dist" "(AIza[0-9A-Za-z_-]{35}|ghp_[0-9a-zA-Z]{36}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----)" . || true)
           if [ -n "$SECRET_MATCHES" ]; then
             echo "::error::Suspicious secret pattern detected in repository!"
             echo "$SECRET_MATCHES"
@@ -42,29 +37,42 @@ jobs:
           fi
           echo "Secret scan clean: No secrets detected."
 
-      - name: Validate Site Structure, CNAME & Internal Links
-        run: python scripts/validate_site.py
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Vite Production Bundle
+        run: npm run build
+
+      - name: Verify Build Artifacts & CNAME
+        run: |
+          echo "Verifying Vite build outputs in dist/..."
+          test -f dist/index.html || (echo "::error::dist/index.html missing after build!" && exit 1)
+          test -f dist/CNAME || (echo "::error::dist/CNAME missing! Domain will fail to bind." && exit 1)
+          grep -q "knowvasystems.com" dist/CNAME || (echo "::error::CNAME does not match knowvasystems.com" && exit 1)
+          test -d dist/assets || (echo "::error::dist/assets directory missing!" && exit 1)
+          echo "Build verification passed: dist/ ready for deployment."
+
+      - name: Upload Build Artifact for Deployment
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: validate
+    needs: build_and_validate
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
